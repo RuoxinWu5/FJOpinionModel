@@ -8,6 +8,7 @@ Friedkin-Johnsen模型的一个简单版本，用于模拟一个小型有向图�
 """
 import numpy as np
 from FJmodel import FJModel
+from visualize import plot_convergence, plot_opinion_distribution
 
 # Step1: 手动定义小型网络邻接矩阵（有向、类型为浮点数） 0->1->2
 A = np.array([
@@ -17,7 +18,7 @@ A = np.array([
 ], dtype=float)
 
 # Step2: 生成内部观点向量s
-n = 3  # 节点数量
+n = len(A[0])  # 节点数量
 np.random.seed(42)  # 固定随机种子，便于复现
 s = np.random.rand(n)  # 生成3个[0,1)的随机数
 print("internal opinion s:", s)
@@ -45,9 +46,16 @@ for step in range(max_iter):
     # print(f"在第 {step + 1} 步收敛")
 
 print()
+
 """
 此处尝试调用 FJModel 类及其 iterate() 方法
 """
 model = FJModel(A, s)
 z_history = model.iterate(max_iter)
 print("z_history", z_history)
+
+"""
+此处尝试调用 visualize 中的 plot_convergence, plot_opinion_distribution 来绘制结果
+"""
+plot_convergence(z_history)
+plot_opinion_distribution(model.z)
