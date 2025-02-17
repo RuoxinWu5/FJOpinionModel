@@ -25,6 +25,7 @@ print("internal opinion s:", s)
 # Step3: 初始化表达观点z
 z = s.copy()  # 初始时表达观点=内部观点
 print("expressed opinion z:", z)
+print()
 
 # Step4: 迭代更新表达观点
 max_iter = 5  # 迭代次数
@@ -43,6 +44,7 @@ for step in range(max_iter):
     # 在此处检查是否收敛，若收敛就break
     # print(f"在第 {step + 1} 步收敛")
 
+print()
 """
 此处尝试调用 FJModel 类及其 iterate() 方法
 """
