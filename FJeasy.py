@@ -35,7 +35,7 @@ for step in range(max_iter):
     # 更新一轮
     for i in range(n):
         neighbors = np.where(A[i] > 0)[0]  # 节点i的邻居（即A[0]中非零的位置）
-        new_z_up = z[i] + A[i, neighbors] @ z[neighbors]
+        new_z_up = s[i] + A[i, neighbors] @ z[neighbors]
         new_z_down = 1 + A[i, neighbors].sum()
         z_new[i] = new_z_up / new_z_down
     z = z_new

@@ -12,6 +12,7 @@
 * Python 3.9.6
 * Numpy 2.0.2
 * Networkx 3.2.1
+* matplotlib 3.9.4
 
 
 ## 代码结构

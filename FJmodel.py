@@ -33,7 +33,7 @@ class FJModel:
             z_new = np.zeros_like(self.z)
             for i in range(self.n):
                 neighbors = np.where(self.A[i] > 0)[0]
-                new_z_up = self.z[i] + self.A[i, neighbors] @ self.z[neighbors]
+                new_z_up = self.s[i] + self.A[i, neighbors] @ self.z[neighbors]
                 new_z_down = 1 + self.A[i, neighbors].sum()
                 z_new[i] = new_z_up / new_z_down
             delta = np.max(np.abs(z_new - self.z))  # 做差后取绝对值，选最大
