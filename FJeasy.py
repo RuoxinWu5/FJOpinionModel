@@ -58,4 +58,4 @@ print("z_history", z_history)
 此处尝试调用 visualize 中的 plot_convergence, plot_opinion_distribution 来绘制结果
 """
 plot_convergence(z_history)
-plot_opinion_distribution(model.z)
+plot_opinion_distribution(s, model.z)
