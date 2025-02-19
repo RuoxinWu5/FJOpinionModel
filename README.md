@@ -10,9 +10,10 @@
 ## 我的环境
 
 * Python 3.9.6
-* Numpy 2.0.2
-* Networkx 3.2.1
+* numpy 2.0.2
+* networkx 3.2.1
 * matplotlib 3.9.4
+* scipy 1.13.1
 
 
 ## 代码结构
