@@ -20,7 +20,7 @@ def plot_opinion_distribution(initial_z, final_z, title="Opinion Distribution Co
     """
     绘制初始和最终观点分布的对比直方图
     """
-    fig, axes = plt.subplots(1, 2, figsize=(14, 7))
+    fig, axes = plt.subplots(1, 2, figsize=(12, 6))
 
     # 计算条形宽度
     bins = 20
@@ -64,7 +64,7 @@ def plot_network_comparison(G, initial_values, final_values, title="Network Stru
     """
     # 生成固定布局，确保两张图的节点位置相同
     layout = nx.spring_layout(G, seed=42)
-    fig, axes = plt.subplots(1, 2, figsize=(14, 7))
+    fig, axes = plt.subplots(1, 2, figsize=(12, 6))
 
     # 归一化颜色数据
     vmin = min(min(initial_values), min(final_values))
