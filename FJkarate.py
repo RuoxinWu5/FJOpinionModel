@@ -23,6 +23,7 @@ history = model.iterate(max_iter=100, tolerance=1e-6)
 # Step4: 可视化结果
 # 1. 绘制观点最大变化的收敛曲线
 plot_convergence(history, "Convergence of FJ Model")
+print("最初观点分布:", s)
 print("最终观点分布:", model.z)
 
 # 2. 绘制初始和最终观点分布的对比直方图
