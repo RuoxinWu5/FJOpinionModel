@@ -6,9 +6,10 @@ Friedkin-Johnsen模型的一个简单版本，用于模拟一个小型有向图�
 3.初始化表达观点
 4.通过迭代更新表达观点，直到达到平衡状态或达到最大迭代次数。
 """
+import networkx as nx
 import numpy as np
 from FJmodel import FJModel
-from visualize import plot_convergence, plot_opinion_distribution
+from visualize import plot_convergence, plot_opinion_distribution, plot_network_comparison
 
 # Step1: 手动定义小型网络邻接矩阵（有向、类型为浮点数） 0->1->2
 A = np.array([
@@ -59,3 +60,7 @@ print("z_history", z_history)
 """
 plot_convergence(z_history)
 plot_opinion_distribution(s, model.z)
+
+# 先转换邻接矩阵为 NetworkX 图
+G = nx.from_numpy_array(A, create_using=nx.DiGraph)
+plot_network_comparison(G, s, model.z)
